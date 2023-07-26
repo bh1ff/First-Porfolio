@@ -1,0 +1,28 @@
+* {
+    background-color: rgba(246, 243, 73, 0.1);}
+
+/* img {
+    width: 30vw;
+
+} */
+.mainHeaders {
+    text-align: center;
+    flex: auto;
+    background-color: #000033c0;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    border-radius: 15px;
+    color:white;
+}
+p {
+    padding: 30px;
+    border-radius: 3%;
+    background-color: aliceblue;
+}
+
+#photo {
+    width: 30vw;  
+    margin:0 auto;
+    display: flex;
+    border-radius: 15px;
+}
