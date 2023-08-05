@@ -11,56 +11,55 @@ body {
   margin: 0;
   padding: 0;
 }
-
+/* navbar position absolute */
 nav {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 3%);
+  top: 0;
+  width: 50%; /* Full width */
   display: grid;
-  grid-template-columns: 30% 40% 30%;
-  grid-template-areas: "logo name links";
+  grid-template-columns: 20% 80%;
+  grid-template-areas: "logo   links";
+  background-color: rgba(0, 162, 127, 0.364);
   align-items: center;
-  /* margin: 30px 15px; */
   justify-items: center;
-  background-image: url(/assets/images/02-portfolio-2.jpg);
-  min-height: 300px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  min-height: 5vw;
+  font-weight: 700;
+  z-index: 10;
+  border-radius: 25px;
 }
-#navName {
-  grid-area: name;
-  font-size: 40px;
-  color: antiquewhite;
 
-}
-.navBarList {
+  .navBarList {
   grid-area: links;
   display: flex;
-  justify-content:space-between;
-  list-style-type: none;
- 
-  
+  list-style-type: none;  
 }
 .navBarList li a {
   margin-left: 10px;
   text-decoration: none;
-  font-size: 30px;
+  font-size: .6vw;
   color: white;
-  padding: 25px 40px;
-  background-color: rgb(13, 75, 247);
-  border-radius: 25px;
+  padding: .5vw 1vw;
+  background-color: rgba(13, 75, 247,0.8);
+  border-radius: .5vw;
+  border: #020040 5px solid;
 }
 
 .navBarList li a::before {
   margin-left: 10px;
 }
 .navBarList li a:hover {
-  font-size: 35px;
+  font-size: .8vw;
   background-color: green;
 }
 
 #navLogo {
   grid-area: logo;
-  max-width: 150px;
-  
+  max-width: 5vw;
+  margin: 0 auto;
+  display: flex;  
 }
 
 .pageWapper {
@@ -87,12 +86,46 @@ nav {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
 }
-
-.heroBanner {
+.heroBanner{
+  background-image: url(/assets/images/headerbackground.gif);
+  min-height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.heroBanner div{
   display: grid;
+  grid-template-rows: 3fr 2fr;
+  flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  padding: 50px 0;
+  align-items: center;
+  justify-items: center;
+  height: 100vh;
+}
+
+.heroBanner h1{
+  font-size: 3em;
+  padding: 5% 10%;
+  color: rgba(10, 57, 77, 1);
+  background-color: rgba(255, 255, 255, 0.899);
+  border-radius: 1vw;
+  border-right: solid black 10px;
+  border-bottom: solid black 15px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.heroBanner h2{
+  padding: 50px 30px;
+  font-size: 4em;
+  justify-content: center;
+  color: #f5f5f5;
+  align-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 1vw;
+  background-color: rgba(0, 0, 0, 0.77);
+  border: solid rgb(14, 36, 181) 30px;
+ 
 }
