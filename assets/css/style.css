@@ -1,23 +1,98 @@
-* {
-  box-sizing: border-box;
+:root {
+  --primary-color: #333;
+  --secondary-color: #f5f5f5;
+  --font-family: Arial, sans-serif;
 }
 
 body {
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
   margin: 0;
   padding: 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
+nav {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  grid-template-areas: "logo name links";
+  align-items: center;
+  /* margin: 30px 15px; */
+  justify-items: center;
+  background-image: url(/assets/images/02-portfolio-2.jpg);
+  min-height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#navName {
+  grid-area: name;
+  font-size: 40px;
+  color: antiquewhite;
+
+}
+.navBarList {
+  grid-area: links;
+  display: flex;
+  justify-content:space-between;
+  list-style-type: none;
+ 
+  
+}
+.navBarList li a {
+  margin-left: 10px;
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+  padding: 25px 40px;
+  background-color: rgb(13, 75, 247);
+  border-radius: 25px;
 }
 
-p {
-  margin: 0;
+.navBarList li a::before {
+  margin-left: 10px;
+}
+.navBarList li a:hover {
+  font-size: 35px;
+  background-color: green;
+}
+
+#navLogo {
+  grid-area: logo;
+  max-width: 150px;
+  
+}
+
+.pageWapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.pageSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+.aboutSubsections,
+.workSubsections {
+  color: var(--primary-color);
+  font-size: 1.2em;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.heroBanner {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 50px 0;
 }
