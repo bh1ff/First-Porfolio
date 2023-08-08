@@ -1,75 +1,30 @@
-# Unit 2 Challenge: Portfolio
+# Project Website: Responsive Online Portal
+## Description
+### Website Info
+The website is designed to be a user-friendly online portal with integrated navigation and enhanced accessibility for users.
 
-## Your Task
+### What the client needed?
+#### Responsive Design
+The client emphasized the importance of having a design that adjusts and looks good on all devices, from mobile to desktop.
+<span style="color:yellow;">This was completed successfully on 20/7.</span>
 
-This week, you'll build a portfolio page, which you can add to as the course progresses. 
+#### Improved Accessibility
+There was a strong focus on ensuring that the website was accessible to all users, including those with disabilities. Hence, ARIA roles and enhanced keyboard navigability were integrated.
+<span style="color:yellow;">This was completed successfully on 20/7.</span>
 
-A portfolio of work can showcase your skills and talents to employers looking to fill a part-time or full-time position. An effective portfolio highlights your strongest work as well as the thought processes behind it. Students who have portfolios with deployed web applications (meaning they are live on the web) are typically very successful in their career search after the boot camp. This last point can’t be stressed enough: having several deployed projects is a minimum requirement to receive an initial interview at many companies. 
+#### User-friendly Navigation
+A clean and intuitive navigation bar was a requirement to make sure users can easily find what they are looking for.
+<span style="color:yellow;">This was completed successfully on 20/7.</span>
 
-With these points in mind, in this challenge you’ll set yourself up for future success by applying the core skills you've recently learned: flexbox, media queries, and CSS variables. You'll get to practice your new skills while creating something that you will use during your job search. It’s a win-win that you'll likely be grateful for in the future!
+## Installation
+URL: https://bh1ff.github.io/First-Portfolio/
+The project is live at the URL above.
 
-**Note:** If you don't have enough web applications to showcase at this point, use placeholder images and names. You can change them to real applications as you create them later in the course.
+## Usage
+Visit the website using any modern browser. It's optimized for both regular users and those utilizing screen readers, ensuring a seamless experience for everyone.
 
-## Acceptance Criteria
-
-Here are the critical requirements necessary to develop a portfolio that satisfies a typical hiring manager’s needs:
-
-* When the page is loaded the page presents your name, a recent photo or avatar, and links to sections about you, your work, and how to contact you
-* When one of the links in the navigation is clicked then the UI scrolls to the corresponding section
-* When viewing the section about your work then the section contains titled images of your applications
-* When presented with the your first application then that application's image should be larger in size than the others
-* When images of the applications are clicked then the user is taken to that deployed application
-* When the page is resized or viewed on various screens and devices then the layout is responsive and adapts to my viewport
-
-## Mock-Up
-
-The following animation shows the web application's appearance and functionality:
-
-![portfolio demo](./images/01-css-challenge-demo.gif)
-
-Feel free to use your own colors and images.
-
-## Grading Requirements
-
-This challenge is graded based on the following criteria: 
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository contains application code.
-
-### Application Quality: 15%
-
-* Application resembles the mock-up functionality provided in the challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme with description, screenshot, link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository that contains your code. Give the repository a unique name and include a README file that describes the project.
-
----
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## Credits
+### Useful Resources
+https://www.w3.org/WAI/standards-guidelines/aria/
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+[https://www.smashingmagazine.com/2018/01/detailed-introduction-flexbox-grid/](https://www.smashingmagazine.com/2018/01/detailed-introduction
