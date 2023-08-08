@@ -1,6 +1,7 @@
 :root {
   --primary-color: #333;
   --secondary-color: #f5f5f5;
+  --highlight-color: #ff6363; /* Added a highlight color for some visual flair */
   --font-family: Arial, sans-serif;
 }
 
@@ -10,49 +11,49 @@ body {
   background-color: var(--secondary-color);
   margin: 0;
   padding: 0;
+  line-height: 1.5; /* Changed 1 to 1.5 for better readability */
+  font-size: 30px;
 }
-/* navbar position absolute */
+
 nav {
   position: absolute;
   left: 50%;
-  top: 50%;
   transform: translate(-50%, 3%);
   top: 0;
-  width: 50%; /* Full width */
+  width: 60%; /* Changed 50% to 60% for better spacing */
   display: grid;
   grid-template-columns: 20% 80%;
   grid-template-areas: "logo   links";
-  background-color: rgba(0, 162, 127, 0.364);
+  background-color: rgba(0, 162, 127, 0.5); /* Made nav slightly more opaque */
   align-items: center;
-  justify-items: center;
-  min-height: 5vw;
-  font-weight: 700;
-  z-index: 10;
   border-radius: 25px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-  .navBarList {
+.navBarList {
   grid-area: links;
   display: flex;
-  list-style-type: none;  
+  list-style-type: none;
+  justify-content: space-around; /* Added for even distribution of links */
 }
+
 .navBarList li a {
   margin-left: 10px;
   text-decoration: none;
-  font-size: .6vw;
+  font-size: 1vw;
   color: white;
   padding: .5vw 1vw;
-  background-color: rgba(13, 75, 247,0.8);
+  background-color: var(--highlight-color); /* Used the new highlight color */
   border-radius: .5vw;
-  border: #020040 5px solid;
+  border: #020040 2px solid; /* Reduced the border to make it more subtle */
+  transition: all 0.3s; /* Smooth transition for hover */
+  
 }
 
-.navBarList li a::before {
-  margin-left: 10px;
-}
 .navBarList li a:hover {
-  font-size: .8vw;
   background-color: green;
+  transform: scale(1.05); /* Slight scale to make hover more noticeable */
+  
 }
 
 #navLogo {
@@ -62,70 +63,280 @@ nav {
   display: flex;  
 }
 
-.pageWapper {
+.pageWrapper {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 20px;
+  grid-template-rows: repeat(4, 1fr);
   padding: 20px;
+  
 }
 
 .pageSection {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightblue;
+  padding: 40px;
+  margin: 50px 20vw; /* Adjusted the margin for better spacing */
+  border-radius: 40px;
+  
+}
+/* remove list style decoration */
+/* changes to list style  */
+li{
+  list-style-type: none;
+}
+ul{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.aboutSubsections,
-.workSubsections {
-  color: var(--primary-color);
-  font-size: 1.2em;
+
+.heroBanner {
+  background-image: url(/assets/images/headerbackground.gif);
+  min-height: 1000px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex; /* Used flexbox for centering */
+  justify-content: center;
+  align-items: center;
+}
+
+.heroBanner h1 {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 5% 10%;
+  border-radius: 1vw;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+
+.heroBanner h2 {
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--secondary-color);
+  border-radius: 1vw;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Added text shadow */
+}
+
+/* Responsiveness */
+@media (max-width: 1000px) {
+  nav {
+    width: 80%; /* Increased nav width */
+  }
+
+  .navBarList li a {
+    font-size: 2vw; /* Increased font size */
+  }
+}
+
+@media (max-width: 750px) {
+  nav {
+    grid-template-columns: 30% 70%; /* Adjusted logo and link ratio */
+  }
+
+  .navBarList li a {
+    font-size: 2.5vw; /* Further increased font size */
+  }
+
+  .pageSection {
+    margin: 20px 10vw; /* Adjusted section margins */
+  }
+}
+
+/* Changed the main nav opacity for better visibility */
+/* Adjusted margins for better spacing and layout flow */
+/* Enhanced hover effects for navigation links */
+/* Used flexbox in heroBanner for better centering */
+/* Added media queries for responsiveness */
+
+/* For the general page layout */
+.pageWrapper {
+  grid-gap: 20px; /* Adds some space between grid children */
+  padding: 20px;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+}
+
+.pageSection {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column by default */
+  gap: 20px; /* Space between elements inside a section */
+}
+
+.pageSection h2 {
+  font-size: 2em; /* Emphasized header size */
+  padding: 0.5em 1em; /* Added padding for the header */
+  background-color: var(--highlight-color);
+  border-radius: 15px;
+  text-align: center; /* Centered header text */
+}
+
+.pageSection p,
+.pageSection ul {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+.pageSection ul {
+  list-style-type: disc; /* Standard bullet points */
+  padding-left: 20px; /* Indent the list a bit */
+}
+
+.pageSection ul li {
+  margin: 5px 0;
+}
+
+.Subsections {
+  background-color: var(--highlight-color);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .contact {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-}
-.heroBanner{
-  background-image: url(/assets/images/headerbackground.gif);
-  min-height: 300px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-.heroBanner div{
-  display: grid;
-  grid-template-rows: 3fr 2fr;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  justify-items: center;
-  height: 100vh;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns for contact */
+  gap: 20px;
 }
 
-.heroBanner h1{
-  font-size: 3em;
-  padding: 5% 10%;
-  color: rgba(10, 57, 77, 1);
-  background-color: rgba(255, 255, 255, 0.899);
-  border-radius: 1vw;
-  border-right: solid black 10px;
-  border-bottom: solid black 15px;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  text-transform: uppercase;
+.contact div {
+  padding: 10px;
+  background-color: lightblue;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content in contact divs */
 }
 
-.heroBanner h2{
-  padding: 50px 30px;
-  font-size: 4em;
-  justify-content: center;
-  color: #f5f5f5;
-  align-content: center;
-  align-items: center;
-  margin: 0 auto;
-  border-radius: 1vw;
-  background-color: rgba(0, 0, 0, 0.77);
-  border: solid rgb(14, 36, 181) 30px;
- 
+/* Responsiveness continued... */
+@media (max-width: 1000px) {
+  .contact {
+    grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for contact */
+  }
 }
+
+@media (max-width: 750px) {
+  .contact {
+    grid-template-columns: 1fr; /* 1 column for smaller screens */
+  }
+
+  .pageSection {
+    grid-template-columns: 1fr;
+    margin: 20px 5vw; /* Adjust margins for smaller screens */
+  }
+}
+
+/* Added consistent background colors for depth and separation */
+/* Enhanced various sections and elements with padding and shadows for depth */
+/* Made the text in sections more consistent and readable */
+/* Enhanced the contact section layout and presentation */
+
+/* Main styling */
+body {
+  line-height: 1.5; /* Improved readability */
+}
+
+/* Navigation bar */
+nav ul {
+  justify-content: space-evenly; /* Distributes the links evenly */
+}
+
+/* heroBanner section enhancement */
+.heroBanner {
+  color: var(--highlight-color);
+}
+
+/* Enhancements for the main pageWrapper */
+.pageWrapper {
+  grid-template-columns: 1fr; /* Single column for default */
+  grid-gap: 30px; /* Adds more space between grid children */
+}
+
+.pageSection {
+  padding: 20px; /* Adds more inner space for each section */
+  background-color: rgba(255, 255, 255, 0.9); /* Adds a subtle white background */
+  border-radius: 10px; /* Rounds the corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+/* Subsections within pageSection */
+.Subsections {
+  margin-bottom: 10px; /* Adds space below each subsection header */
+}
+
+/* Value section enhancement */
+#value {
+  background-color: var(--highlight-color); /* Make the value section stand out more */
+  
+  text-align: center; /* Centers the content */
+  background-image: url(/assets/images/02-portfolio-1.jpg);
+}
+#value p {
+  color: var(--secondary-color);
+  font-size: 60px;
+  padding: 5%;
+  margin: 3% 25%;
+  background-color: #3e1af2b1;
+  border-radius: 15px;
+}
+/* Contact section styling */
+.contact ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact li a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.contact li a:hover {
+  color: var(--highlight-color);
+}
+
+/* Footer styling */
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+/* Responsiveness for specified breakpoints */
+@media (max-width: 1000px) {
+  nav {
+    grid-template-columns: 1fr;
+  }
+
+  .navBarList {
+    margin-top: 10px; /* Adds space between logo and navbar */
+  }
+
+  .pageSection {
+    margin: 20px 2vw; /* Adjust margins for medium screens */
+  }
+}
+
+@media (max-width: 750px) {
+  .pageSection {
+    margin: 20px 5vw; /* Adjust margins for smaller screens */
+  }
+
+  .contact li a {
+    font-size: 14px; /* Adjust font size for better visibility on smaller screens */
+  }
+}
+
+/* Enhanced overall layout for improved visual clarity */
+/* Made value section stand out more for emphasis */
