@@ -1,30 +1,32 @@
 :root {
   --primary-color: #333;
-  --secondary-color: #f5f5f5;
-  --highlight-color: #ff6363; /* Added a highlight color for some visual flair */
+  --secondary-color: #e8e8e8;
+  --font-color: rgb(3, 0, 181);
+  --highlight-color: #4ea2c8;
   --font-family: Arial, sans-serif;
 }
 
 body {
   font-family: var(--font-family);
-  color: var(--primary-color);
+  color: var(--font-color);
   background-color: var(--secondary-color);
   margin: 0;
   padding: 0;
-  line-height: 1.5; /* Changed 1 to 1.5 for better readability */
-  font-size: 30px;
+  line-height: 1.5;
+  font-size: 20px; /* Reduced from 30px for better scaling on smaller screens */
 }
 
+/* NAVIGATION BAR */
 nav {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 3%);
   top: 0;
-  width: 60%; /* Changed 50% to 60% for better spacing */
+  width: 60%;
   display: grid;
   grid-template-columns: 20% 80%;
   grid-template-areas: "logo   links";
-  background-color: rgba(0, 162, 127, 0.5); /* Made nav slightly more opaque */
+  background-color: rgba(0, 162, 127, 0.5);
   align-items: center;
   border-radius: 25px;
   font-family: 'Courier New', Courier, monospace;
@@ -34,7 +36,7 @@ nav {
   grid-area: links;
   display: flex;
   list-style-type: none;
-  justify-content: space-around; /* Added for even distribution of links */
+  justify-content: space-around;
 }
 
 .navBarList li a {
@@ -43,31 +45,29 @@ nav {
   font-size: 1vw;
   color: white;
   padding: .5vw 1vw;
-  background-color: var(--highlight-color); /* Used the new highlight color */
+  background-color: var(--highlight-color);
   border-radius: .5vw;
-  border: #020040 2px solid; /* Reduced the border to make it more subtle */
-  transition: all 0.3s; /* Smooth transition for hover */
-  
+  border: #020040 2px solid;
+  transition: all 0.3s;
 }
 
 .navBarList li a:hover {
   background-color: green;
-  transform: scale(1.05); /* Slight scale to make hover more noticeable */
-  
+  transform: scale(1.05);
 }
 
 #navLogo {
   grid-area: logo;
   max-width: 5vw;
   margin: 0 auto;
-  display: flex;  
+  display: flex;
 }
 
+/* PAGE STRUCTURE */
 .pageWrapper {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   padding: 20px;
-  
 }
 
 .pageSection {
@@ -76,30 +76,29 @@ nav {
   align-items: center;
   background-color: lightblue;
   padding: 40px;
-  margin: 50px 20vw; /* Adjusted the margin for better spacing */
+  margin: 30px 10vw; /* Reduced margin to improve responsive appearance */
   border-radius: 40px;
-  
 }
-/* remove list style decoration */
-/* changes to list style  */
-li{
+
+li {
   list-style-type: none;
 }
-ul{
+
+ul {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   align-items: center;
   justify-content: space-around;
 }
 
-
+/* HERO BANNER */
 .heroBanner {
   background-image: url(/assets/images/headerbackground.gif);
-  min-height: 1000px;
+  min-height: 800px; /* Reduced height for better responsive appearance */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  display: flex; /* Used flexbox for centering */
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -110,7 +109,7 @@ ul{
   border-radius: 1vw;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-transform: uppercase;
-  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .heroBanner h2 {
@@ -118,225 +117,80 @@ ul{
   background-color: rgba(0, 0, 0, 0.8);
   color: var(--secondary-color);
   border-radius: 1vw;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Added text shadow */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsiveness */
+/* RESPONSIVENESS IMPROVEMENTS */
 @media (max-width: 1000px) {
   nav {
-    width: 80%; /* Increased nav width */
+    width: 90%;
+    grid-template-columns: 1fr; /* Adjusted for better mobile layout */
   }
 
   .navBarList li a {
-    font-size: 2vw; /* Increased font size */
+    font-size: 3vw; /* Bigger fonts for mobile view */
   }
-}
-
-@media (max-width: 750px) {
-  nav {
-    grid-template-columns: 30% 70%; /* Adjusted logo and link ratio */
-  }
-
-  .navBarList li a {
-    font-size: 2.5vw; /* Further increased font size */
-  }
-
-  .pageSection {
-    margin: 20px 10vw; /* Adjusted section margins */
-  }
-}
-
-/* Changed the main nav opacity for better visibility */
-/* Adjusted margins for better spacing and layout flow */
-/* Enhanced hover effects for navigation links */
-/* Used flexbox in heroBanner for better centering */
-/* Added media queries for responsiveness */
-
-/* For the general page layout */
-.pageWrapper {
-  grid-gap: 20px; /* Adds some space between grid children */
-  padding: 20px;
-  background-color: var(--secondary-color);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
-}
-
-.pageSection {
-  display: grid;
-  grid-template-columns: 1fr; /* Single column by default */
-  gap: 20px; /* Space between elements inside a section */
-}
-
-.pageSection h2 {
-  font-size: 2em; /* Emphasized header size */
-  padding: 0.5em 1em; /* Added padding for the header */
-  background-color: var(--highlight-color);
-  border-radius: 15px;
-  text-align: center; /* Centered header text */
-}
-
-.pageSection p,
-.pageSection ul {
-  font-size: 1em;
-  margin: 0;
-  padding: 0;
-}
-
-.pageSection ul {
-  list-style-type: disc; /* Standard bullet points */
-  padding-left: 20px; /* Indent the list a bit */
-}
-
-.pageSection ul li {
-  margin: 5px 0;
-}
-
-.Subsections {
-  background-color: var(--highlight-color);
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-.contact {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns for contact */
-  gap: 20px;
-}
-
-.contact div {
-  padding: 10px;
-  background-color: lightblue;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Center content in contact divs */
-}
-
-/* Responsiveness continued... */
-@media (max-width: 1000px) {
-  .contact {
-    grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for contact */
-  }
-}
-
-@media (max-width: 750px) {
-  .contact {
-    grid-template-columns: 1fr; /* 1 column for smaller screens */
-  }
-
-  .pageSection {
-    grid-template-columns: 1fr;
-    margin: 20px 5vw; /* Adjust margins for smaller screens */
-  }
-}
-
-/* Added consistent background colors for depth and separation */
-/* Enhanced various sections and elements with padding and shadows for depth */
-/* Made the text in sections more consistent and readable */
-/* Enhanced the contact section layout and presentation */
-
-/* Main styling */
-body {
-  line-height: 1.5; /* Improved readability */
-}
-
-/* Navigation bar */
-nav ul {
-  justify-content: space-evenly; /* Distributes the links evenly */
-}
-
-/* heroBanner section enhancement */
-.heroBanner {
-  color: var(--highlight-color);
-}
-
-/* Enhancements for the main pageWrapper */
-.pageWrapper {
-  grid-template-columns: 1fr; /* Single column for default */
-  grid-gap: 30px; /* Adds more space between grid children */
-}
-
-.pageSection {
-  padding: 20px; /* Adds more inner space for each section */
-  background-color: rgba(255, 255, 255, 0.9); /* Adds a subtle white background */
-  border-radius: 10px; /* Rounds the corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
-}
-
-/* Subsections within pageSection */
-.Subsections {
-  margin-bottom: 10px; /* Adds space below each subsection header */
-}
-
-/* Value section enhancement */
-#value {
-  background-color: var(--highlight-color); /* Make the value section stand out more */
   
-  text-align: center; /* Centers the content */
-  background-image: url(/assets/images/02-portfolio-1.jpg);
+  .pageSection {
+    padding: 20px; /* Adjusted padding for smaller screens */
+  }
 }
-#value p {
+
+@media (max-width: 750px) {
+  .pageSection {
+    margin: 20px 5vw; /* Further margin adjustments for smaller screens */
+  }
+  
+  .navBarList li a {
+    font-size: 4vw; /* Further font size adjustments for better visibility on smaller screens */
+  }
+}
+
+/* FOOTER */
+
+footer {
+  background-color: var(--primary-color);
   color: var(--secondary-color);
-  font-size: 60px;
-  padding: 5%;
-  margin: 3% 25%;
-  background-color: #3e1af2b1;
-  border-radius: 15px;
-}
-/* Contact section styling */
-.contact ul {
-  list-style: none;
-  padding: 0;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+}
+footer nav {
+  position: relative;
+  left: 0%;
+  transform: translate(0%, 0%);
+  top: 0;
+  width: 30%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas: "logo links";
+  background-color: rgba(0, 162, 127, 0.5);
+  align-items: center;
+  border-radius: 25px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.contact li a {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: color 0.3s ease; /* Smooth transition for hover effect */
+.footer-logo img {
+  max-width: 150px;
+  margin-bottom: 15px;
 }
 
-.contact li a:hover {
-  color: var(--highlight-color);
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
 }
 
-/* Footer styling */
-footer {
-  padding: 20px;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.8);
+.footer-links a {
   color: var(--secondary-color);
-  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* Responsiveness for specified breakpoints */
-@media (max-width: 1000px) {
-  nav {
-    grid-template-columns: 1fr;
-  }
-
-  .navBarList {
-    margin-top: 10px; /* Adds space between logo and navbar */
-  }
-
-  .pageSection {
-    margin: 20px 2vw; /* Adjust margins for medium screens */
-  }
+.footer-links a:hover {
+  color: var(--highlight-color);
+  
 }
 
-@media (max-width: 750px) {
-  .pageSection {
-    margin: 20px 5vw; /* Adjust margins for smaller screens */
-  }
-
-  .contact li a {
-    font-size: 14px; /* Adjust font size for better visibility on smaller screens */
-  }
-}
-
-/* Enhanced overall layout for improved visual clarity */
-/* Made value section stand out more for emphasis */
